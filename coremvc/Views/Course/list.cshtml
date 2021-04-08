@@ -1,0 +1,35 @@
+﻿@model IEnumerable<student>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>list</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.name</td>
+                    <td>@student.email</td>
+                    <td>@student.phone</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</body>
+</html>

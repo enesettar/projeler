@@ -1,0 +1,44 @@
+﻿@using coremvc.models
+@model student
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>apply</title>
+</head>
+<body>
+    <form method="post" asp-action="apply">
+       <div asp-validation-summary="All"></div> //tüm hataları gösterir
+        <p>
+            <label asp-for="name">name :</label>
+            <input asp-for="name" />
+        </p>
+        <p>
+            <label asp-for="email">email :</label>
+            <input asp-for="email" />
+        </p>
+        <p>
+            <label asp-for="phone">phone:</label>
+            <input asp-for="phone" />
+        </p>
+        <p>
+            <label asp-for="willattend">willattend=</label>
+            <select asp-for="willattend">
+                    <option value="">select an option</option>
+                <option value="true">yes,ı will attend</option>
+                <option value="false">no,ı will no attend</option>
+            
+
+            </select>
+            
+        </p>
+        <button type="submit">submit </button>
+    </form>
+</body>
+</html>
