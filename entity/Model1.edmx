@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbmvcblogyeniModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbmvcblogyeni.dbo.TBLHAKKIMDA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TBLHAKKIMDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HAKKIMDA" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbmvcblogyeni.dbo.TBLILETISIM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TBLILETISIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="50" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="MESAJ" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="dbmvcblogyeniModelStoreContainer">
+          <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TBLHAKKIMDA].[ID] AS [ID], 
+    [TBLHAKKIMDA].[HAKKIMDA] AS [HAKKIMDA]
+    FROM [dbo].[TBLHAKKIMDA] AS [TBLHAKKIMDA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TBLILETISIM].[ID] AS [ID], 
+    [TBLILETISIM].[AD] AS [AD], 
+    [TBLILETISIM].[MAIL] AS [MAIL], 
+    [TBLILETISIM].[MESAJ] AS [MESAJ]
+    FROM [dbo].[TBLILETISIM] AS [TBLILETISIM]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbmvcblogyeniModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLHAKKIMDA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HAKKIMDA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TBLILETISIM">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MESAJ" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="dbmvcblogyeniEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLHAKKIMDA" EntityType="Self.TBLHAKKIMDA" />
+          <EntitySet Name="TBLILETISIM" EntityType="Self.TBLILETISIM" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbmvcblogyeniModelStoreContainer" CdmEntityContainer="dbmvcblogyeniEntities">
+          <EntitySetMapping Name="TBLHAKKIMDA">
+            <EntityTypeMapping TypeName="dbmvcblogyeniModel.TBLHAKKIMDA">
+              <MappingFragment StoreEntitySet="TBLHAKKIMDA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HAKKIMDA" ColumnName="HAKKIMDA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLILETISIM">
+            <EntityTypeMapping TypeName="dbmvcblogyeniModel.TBLILETISIM">
+              <MappingFragment StoreEntitySet="TBLILETISIM">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="MESAJ" ColumnName="MESAJ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
