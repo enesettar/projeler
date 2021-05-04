@@ -1,0 +1,26 @@
+﻿@model netmvc.Models.entity.TBL_MUSTERI
+@{
+    ViewBag.Title = "müşterigetir";
+    Layout = "~/Views/Shared/_mainlayoutornek.cshtml";
+}
+
+<h2>müşteri getir</h2>
+
+@using (Html.BeginForm("güncelle", "müşteri", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(m => m.MUSTERIRID)
+    @Html.TextBoxFor(m => m.MUSTERIRID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.MUSTERIAD)
+    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(m => m.MUSTERISOYAD)
+    @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+    <br />
+
+</div>
+<div>
+    <button class="btn btn-warning">müşteri güncelle</button>
+</div>
+}

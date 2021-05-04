@@ -1,0 +1,31 @@
+﻿@using netmvc.Models.entity
+@model List<TBL_MUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>MUSTERI ID</th>
+        <th> MUSTERI ADI</th>
+        <th> MUSTERI SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+       @foreach(var mstri in Model)
+       {
+        <tr>
+            <th>@mstri.MUSTERIRID</th>
+            <td>@mstri.MUSTERIAD</td>
+            <td>@mstri.MUSTERISOYAD</td>
+            <td><a href="/müşteri/SİL/@mstri.MUSTERIRID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/müşteri/müşterigetir/@mstri.MUSTERIRID" class="btn btn-success">GÜNCELLE</a> </td>
+
+
+        </tr>
+       }
+    </tbody>
+</table>
+<a href="/müşteri/yenimusteri" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>

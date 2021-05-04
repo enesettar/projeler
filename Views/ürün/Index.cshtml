@@ -1,0 +1,40 @@
+﻿@using netmvc.Models.entity
+@model List<TBL_URUNLER>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>URUN ID</th>
+        <th>URUN ADI</th>
+        <th>URUN KATEGORİ</th>
+        <th>FİYAT</th>
+        <th>MARKA</th>
+        <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    <tbody>
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <th>@urun.URUNID</th>
+                <td>@urun.URUNAD</td>
+                <td>@urun.TBL_KATEGORI.KATEGORIAD</td>
+                <td>@urun.FIYAT</td>
+                <td>@urun.MARKA</td>
+                <td>@urun.STOK</td>
+                <td><a href="/ürün/SİL/@urun.URUNID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/ürün/urungetir/@urun.URUNID" class="btn btn-success">GÜNCELLE</a> </td>
+
+            </tr>
+        }
+    </tbody> 
+</table>
+<a href="/ürün/ürünekle" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+
