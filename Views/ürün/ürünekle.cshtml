@@ -1,0 +1,32 @@
+﻿@model netmvc.Models.entity.TBL_URUNLER
+@{
+    ViewBag.Title = "ürünekle";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<form>
+    <div>
+        <label> ürün adı</label>
+        <input type="text" class="form-control" name="URUNAD" />
+    </div>
+    <div>
+        <label> kategori seçiniz</label>
+       @Html.DropDownListFor(m => m.TBL_KATEGORI.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control"})
+    </div>
+    <div>
+        <label>fiyatı</label>
+        <input type="text" class="form-control" name="FIYAT" />
+    </div>
+    <div>
+        <label> markası</label>
+        <input type="text" class="form-control" name="MARKA" />
+    </div>
+    <div>
+        <label> stok adet</label>
+        <input type="text" class="form-control" name="STOK" />
+    </div>
+    <div>
+        <button class="btn btn-info">ürün ekle</button>
+    </div>
+</form>
+

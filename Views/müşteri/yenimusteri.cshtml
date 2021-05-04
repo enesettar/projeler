@@ -1,0 +1,22 @@
+﻿@model netmvc.Models.entity.TBL_MUSTERI
+
+@{
+    ViewBag.Title = "yenimusteri";
+    Layout = "~/Views/Shared/_mainlayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label> müşteri adı</label>
+        
+        <input type="text" class="form-control" name="MUSTERIAD" />
+    </div>
+    <div>
+        <label> müşteri soyad</label>
+        <input type="text" class="form-control" name="MUSTERISOYAD" />
+    </div>
+    <div>
+       <button class="btn btn-info">müşteri ekle</button>
+    </div>
+</form>
+
